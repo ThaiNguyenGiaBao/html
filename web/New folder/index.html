@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Remote AI Hand Gesture Control</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+  </head>
+  <body>
+    <div id="container">
+      <header >
+        
+        <h1>
+          <a href="https://agilertc.com"> <img src="https://agilertc.com/assets/logo-a6cc3d7f.svg" alt="coplay-logo"  > </a>
+          
+          <span>Remote AI Hand Gesture Control</span>
+        </h1>
+    
+      </header>
+
+      <main>
+        <section class="s1">
+          <section class="s1.1">
+          <h2 class="first-line">1. Find the robot and pair.</h2>
+          <label class="l1" for="robotSelect">Robot profile: </label>
+          <select id="robotSelect">
+            <option value="ESP_CW_001">ESP_CW_001</option>
+            <option value="RPI_BW_001">RPI_BW_001</option>
+            <option value="RPI_CL_001">RPI_CL_001</option>
+            <option value="RPI_CL_002">RPI_CL_002</option>
+            <option value="RPI_CW_001">RPI_CW_001</option>
+            <option value="RPI_HA_001">RPI_HA_001</option>
+            <option value="RPI_HW_001">RPI_HW_001</option>
+            <option value="JTSN_HW_001">JTSN_HW_001</option>
+          </select>
+          <button id="pairButton">Pairing</button>
+          <br />
+          <label class="l2" for="robotNameInput">Connected Robot Name is </label>
+          <input
+            type="text"
+            id="robotNameInput"
+            value=""
+            placeholder=""
+            disabled
+          />
+        </section>
+
+      <section class="s1.2">
+          <h2>2. Send the media server information to robot.</h2>
+      <div class="form_container">
+        <div class="form_row">
+          <label class="form_label" for="ssidInput">SSID: </label>
+          <input class="form_input" type="text" id="ssidInput" value="" placeholder="" />  
+        </div>
+        <div class="form_row">
+          <label class="form_label" for="passwordInput">Password: </label>
+          <input class="form_input" type="password" id="passwordInput" value="" placeholder="" />
+        </div>
+        <div class="form_row">
+          <label class="form_label" for="hostInput">Host: </label>
+          <input class="form_input"type="text" id="hostInput" value="" placeholder="" />
+        </div>
+        <div class="form_row">
+          <label class="form_label" for="portInput">Port: </label>
+          <input class="form_input"type="number" id="portInput" value="" placeholder="" />
+        </div>
+        <div class="form_row">
+          <label class="form_label" for="channelInput">Channel Name: </label>
+          <input class="form_input"type="text" id="channelInput" placeholder="" />
+        </div>
+      </div>
+          <button id="sendMediaServerInfoButton">Send</button>
+      </section>
+    </section>
+
+        <section class="s2">
+          <h2>3. Hand gesture </h2>
+          
+          <div class="box1">
+            <video id="videoElement" autoplay muted></video>
+            <h2> LOG:</h2>
+            <textarea
+              disabled
+              name=""
+              id="messageViewCanvas"
+            ></textarea>
+          </div>
+        </section>
+        
+        <section class="s2">
+          <h2>4. Receive the video.</h2>
+          <div class="box2">
+            <canvas id="canvasElement"></canvas>
+          </div>
+        </section>
+        
+        </div>
+        <button id="openWebSocketButton">Open</button>
+        <button id="stopButton">Stop</button>
+      </main>
+      <script type="module" src="./script1.js"></script>
+    
+    
+  </body>
+</html>
